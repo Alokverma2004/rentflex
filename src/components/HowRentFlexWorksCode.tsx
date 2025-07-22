@@ -1,41 +1,48 @@
 import { Home, CreditCard, CheckCircle, Building } from 'lucide-react';
 
 const HowRentFlexWorksCode = () => {
-  const codeContent = `// RentFlex Process
-if (tenant.requestsHelp) {
-  RentFlex.paySecurityDeposit();
-  tenant.moveIn();
-  tenant.repayMonthly();
+  const codeContent = `// rentflex.engine.js
+
+async function startJourney() {
+  const tenant = await findDreamHome({ needsDepositHelp: true });
+
+  if (tenant) {
+    console.log("🏡 Dream rental found!");
+    await RentFlex.coverSecurityDeposit(tenant);
+    await tenant.moveIn();
+    await tenant.startMonthlyRepayment();
+  }
+
+  const owner = await matchOwnerToTenant(tenant);
+
+  if (owner.acceptsTenant) {
+    await owner.receiveInstantDeposit();
+    console.log("💰 Owner got paid instantly");
+  }
 }
 
-if (owner.acceptsTenant) {
-  owner.getDepositInstantly();
-}`;
+startJourney();`;
 
-  const steps = [
-    {
-      icon: Home,
-      title: "Tenant Requests Help",
-      description: "Tenant finds their dream rental but needs help with the security deposit",
-      lineNumbers: "2-5"
-    },
-    {
-      icon: CreditCard,
-      title: "We Pay Deposit",
-      description: "RentFlex instantly covers the full security deposit amount",
-      lineNumbers: "3"
-    },
+  const features = [
     {
       icon: CheckCircle,
-      title: "Tenant Moves In",
-      description: "Tenant can move in immediately without blocking their savings",
-      lineNumbers: "4"
+      title: "Real-time deposit assistance",
+      description: "Instant security deposit coverage when you need it most"
+    },
+    {
+      icon: Home,
+      title: "Zero delays in moving",
+      description: "Move into your dream rental without waiting for deposit arrangements"
     },
     {
       icon: Building,
-      title: "Owner Gets Paid",
-      description: "Property owner receives the deposit instantly when they accept the tenant",
-      lineNumbers: "8-10"
+      title: "Owner gets paid upfront", 
+      description: "Property owners receive their deposit instantly upon tenant acceptance"
+    },
+    {
+      icon: CreditCard,
+      title: "Tenant pays back monthly",
+      description: "Flexible monthly repayment plans that fit your budget"
     }
   ];
 
@@ -44,30 +51,28 @@ if (owner.acceptsTenant) {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            How RentFlex Works
+            How RentFlex Works — Developer Edition
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Simple, transparent, and developer-friendly approach to rental deposits
+            Code that moves mountains (and security deposits)
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Steps - Left Side */}
+          {/* Features - Left Side */}
           <div className="space-y-8">
-            {steps.map((step, index) => (
+            {features.map((feature, index) => (
               <div key={index} className="flex items-start gap-6">
-                <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
-                  <step.icon className="w-8 h-8 text-secondary-foreground" />
+                <div className="w-16 h-16 bg-green-500/10 border border-green-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <feature.icon className="w-8 h-8 text-green-600" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-3">
-                    <h3 className="text-2xl font-bold text-foreground">{step.title}</h3>
-                    <span className="text-xs bg-accent/20 text-accent px-3 py-1 rounded-full font-mono font-semibold">
-                      Line {step.lineNumbers}
-                    </span>
+                    <span className="text-green-600 font-mono text-lg">✅</span>
+                    <h3 className="text-2xl font-bold text-foreground">{feature.title}</h3>
                   </div>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    {step.description}
+                    {feature.description}
                   </p>
                 </div>
               </div>
@@ -76,31 +81,37 @@ if (owner.acceptsTenant) {
 
           {/* Code Block - Right Side */}
           <div className="lg:sticky lg:top-8">
-            <div className="bg-card rounded-2xl shadow-2xl border border-border overflow-hidden">
+            <div className="bg-gray-900 rounded-2xl shadow-2xl border border-gray-700 overflow-hidden">
               {/* Code Header */}
-              <div className="bg-gradient-to-r from-muted to-muted/80 px-6 py-4 border-b border-border flex items-center gap-3">
+              <div className="bg-gray-800 px-6 py-4 border-b border-gray-700 flex items-center gap-3">
                 <div className="flex gap-2">
                   <div className="w-4 h-4 rounded-full bg-red-500 shadow-sm"></div>
                   <div className="w-4 h-4 rounded-full bg-yellow-500 shadow-sm"></div>
                   <div className="w-4 h-4 rounded-full bg-green-500 shadow-sm"></div>
                 </div>
-                <span className="text-sm text-muted-foreground ml-3 font-mono font-medium">rentflex-process.js</span>
+                <span className="text-sm text-gray-300 ml-3 font-mono font-medium">rentflex.engine.js</span>
               </div>
               
               {/* Code Content */}
-              <div className="p-8 bg-gradient-to-br from-card to-card/95">
-                <pre className="text-base font-mono leading-loose text-foreground overflow-x-auto">
+              <div className="p-8 bg-gray-900">
+                <pre className="text-base font-mono leading-loose text-gray-100 overflow-x-auto">
                   <code className="block">
-                    <span className="text-green-600 font-medium">// RentFlex Process</span>{'\n'}
-                    <span className="text-purple-600 font-semibold">if</span> <span className="text-muted-foreground">(</span>tenant<span className="text-orange-500">.</span>requestsHelp<span className="text-muted-foreground">) {'{'}</span>
-                    {'\n  '}RentFlex<span className="text-orange-500">.</span><span className="text-blue-600 font-medium">paySecurityDeposit</span><span className="text-muted-foreground">();</span>
-                    {'\n  '}tenant<span className="text-orange-500">.</span><span className="text-blue-600 font-medium">moveIn</span><span className="text-muted-foreground">();</span>
-                    {'\n  '}tenant<span className="text-orange-500">.</span><span className="text-blue-600 font-medium">repayMonthly</span><span className="text-muted-foreground">();</span>
-                    {'\n'}<span className="text-muted-foreground">{'}'}</span>
-                    {'\n\n'}
-                    <span className="text-purple-600 font-semibold">if</span> <span className="text-muted-foreground">(</span>owner<span className="text-orange-500">.</span>acceptsTenant<span className="text-muted-foreground">) {'{'}</span>
-                    {'\n  '}owner<span className="text-orange-500">.</span><span className="text-blue-600 font-medium">getDepositInstantly</span><span className="text-muted-foreground">();</span>
-                    {'\n'}<span className="text-muted-foreground">{'}'}</span>
+                    <span className="text-gray-500">// rentflex.engine.js</span>{'\n\n'}
+                    <span className="text-purple-400">async function</span> <span className="text-yellow-300">startJourney</span><span className="text-gray-300">() {'{'}</span>
+                    {'\n  '}<span className="text-purple-400">const</span> <span className="text-blue-300">tenant</span> <span className="text-purple-400">=</span> <span className="text-purple-400">await</span> <span className="text-yellow-300">findDreamHome</span><span className="text-gray-300">({'{'} </span><span className="text-green-400">needsDepositHelp</span><span className="text-gray-300">:</span> <span className="text-orange-400">true</span> <span className="text-gray-300">{'}'});</span>
+                    {'\n\n  '}<span className="text-purple-400">if</span> <span className="text-gray-300">(</span><span className="text-blue-300">tenant</span><span className="text-gray-300">) {'{'}</span>
+                    {'\n    '}<span className="text-blue-300">console</span><span className="text-gray-300">.</span><span className="text-yellow-300">log</span><span className="text-gray-300">(</span><span className="text-green-400">"🏡 Dream rental found!"</span><span className="text-gray-300">);</span>
+                    {'\n    '}<span className="text-purple-400">await</span> <span className="text-blue-300">RentFlex</span><span className="text-gray-300">.</span><span className="text-yellow-300">coverSecurityDeposit</span><span className="text-gray-300">(</span><span className="text-blue-300">tenant</span><span className="text-gray-300">);</span>
+                    {'\n    '}<span className="text-purple-400">await</span> <span className="text-blue-300">tenant</span><span className="text-gray-300">.</span><span className="text-yellow-300">moveIn</span><span className="text-gray-300">();</span>
+                    {'\n    '}<span className="text-purple-400">await</span> <span className="text-blue-300">tenant</span><span className="text-gray-300">.</span><span className="text-yellow-300">startMonthlyRepayment</span><span className="text-gray-300">();</span>
+                    {'\n  '}<span className="text-gray-300">{'}'}</span>
+                    {'\n\n  '}<span className="text-purple-400">const</span> <span className="text-blue-300">owner</span> <span className="text-purple-400">=</span> <span className="text-purple-400">await</span> <span className="text-yellow-300">matchOwnerToTenant</span><span className="text-gray-300">(</span><span className="text-blue-300">tenant</span><span className="text-gray-300">);</span>
+                    {'\n\n  '}<span className="text-purple-400">if</span> <span className="text-gray-300">(</span><span className="text-blue-300">owner</span><span className="text-gray-300">.</span><span className="text-green-400">acceptsTenant</span><span className="text-gray-300">) {'{'}</span>
+                    {'\n    '}<span className="text-purple-400">await</span> <span className="text-blue-300">owner</span><span className="text-gray-300">.</span><span className="text-yellow-300">receiveInstantDeposit</span><span className="text-gray-300">();</span>
+                    {'\n    '}<span className="text-blue-300">console</span><span className="text-gray-300">.</span><span className="text-yellow-300">log</span><span className="text-gray-300">(</span><span className="text-green-400">"💰 Owner got paid instantly"</span><span className="text-gray-300">);</span>
+                    {'\n  '}<span className="text-gray-300">{'}'}</span>
+                    {'\n'}<span className="text-gray-300">{'}'}</span>
+                    {'\n\n'}<span className="text-yellow-300">startJourney</span><span className="text-gray-300">();</span>
                   </code>
                 </pre>
               </div>
