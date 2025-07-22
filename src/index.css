@@ -116,7 +116,7 @@ All colors MUST be HSL.
 }
 
 .cta-button {
-  @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-blue hover:scale-105;
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105;
 }
 
 .hero-button-primary {
@@ -124,7 +124,7 @@ All colors MUST be HSL.
 }
 
 .hero-button-secondary {
-  @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-blue hover:scale-105;
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105;
 }
 
 .step-card {
