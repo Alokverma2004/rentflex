@@ -28,24 +28,6 @@ const TestimonialsCarousel = () => {
       role: "Landlord, Pune",
       text: "RentFlex brings quality tenants and I get my deposit immediately. It's a win-win for everyone involved.",
       rating: 5
-    },
-    {
-      name: "Meera Reddy",
-      role: "Student, Hyderabad",
-      text: "No more waiting for parents to transfer deposit money. RentFlex made my college accommodation hassle-free!",
-      rating: 5
-    },
-    {
-      name: "Amit Gupta",
-      role: "Tech Professional, Gurgaon",
-      text: "Moving to a new city for work was stressful enough. RentFlex removed the biggest hurdle - the huge security deposit.",
-      rating: 5
-    },
-    {
-      name: "Sunita Joshi",
-      role: "PG Owner, Mumbai",
-      text: "My PG is always full now. Students prefer us because of the RentFlex partnership. Best decision I made!",
-      rating: 5
     }
   ];
 
@@ -98,6 +80,35 @@ const TestimonialsCarousel = () => {
             </div>
           </div>
 
+          {/* Navigation */}
+          <div className="flex justify-center items-center mt-8 space-x-4">
+            <button
+              onClick={prevTestimonial}
+              className="p-2 rounded-full bg-card shadow-soft hover:shadow-lg transition-all duration-200"
+            >
+              <ChevronLeft className="w-6 h-6 text-foreground" />
+            </button>
+            
+            {/* Dots */}
+            <div className="flex space-x-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                    index === activeIndex ? 'bg-secondary' : 'bg-muted-foreground/30'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextTestimonial}
+              className="p-2 rounded-full bg-card shadow-soft hover:shadow-lg transition-all duration-200"
+            >
+              <ChevronRight className="w-6 h-6 text-foreground" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
