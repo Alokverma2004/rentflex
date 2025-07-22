@@ -7,43 +7,43 @@ const TestimonialsCarousel = () => {
   const testimonials = [
     {
       name: "Priya Sharma",
-      role: "Student, Delhi University",
+      role: "Student, Koramangala, Bangalore",
       text: "RentFlex saved me from borrowing money from family. I moved into my dream PG without any stress about the deposit.",
       rating: 5
     },
     {
       name: "Rajesh Kumar",
-      role: "PG Owner, Bangalore",
+      role: "PG Owner, Whitefield, Bangalore",
       text: "Since partnering with RentFlex, my occupancy rate increased by 40%. Tenants love the deposit-free option!",
       rating: 5
     },
     {
       name: "Anjali Patel",
-      role: "Working Professional, Mumbai",
+      role: "Working Professional, HSR Layout, Bangalore",
       text: "The process was so smooth. Within 2 days, I had my rental sorted without paying a huge deposit upfront.",
       rating: 5
     },
     {
       name: "Vikram Singh",
-      role: "Landlord, Pune",
+      role: "Landlord, Indiranagar, Bangalore",
       text: "RentFlex brings quality tenants and I get my deposit immediately. It's a win-win for everyone involved.",
       rating: 5
     },
     {
       name: "Meera Reddy",
-      role: "Student, Hyderabad",
+      role: "Student, BTM Layout, Bangalore",
       text: "No more waiting for parents to transfer deposit money. RentFlex made my college accommodation hassle-free!",
       rating: 5
     },
     {
       name: "Amit Gupta",
-      role: "Tech Professional, Gurgaon",
+      role: "Tech Professional, Electronic City, Bangalore",
       text: "Moving to a new city for work was stressful enough. RentFlex removed the biggest hurdle - the huge security deposit.",
       rating: 5
     },
     {
       name: "Sunita Joshi",
-      role: "PG Owner, Mumbai",
+      role: "PG Owner, Marathahalli, Bangalore",
       text: "My PG is always full now. Students prefer us because of the RentFlex partnership. Best decision I made!",
       rating: 5
     }
@@ -52,7 +52,7 @@ const TestimonialsCarousel = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    }, 8000);
     return () => clearInterval(timer);
   }, []);
 
