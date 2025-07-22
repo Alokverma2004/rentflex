@@ -15,8 +15,6 @@ const ContactSection = () => {
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="step-card text-center hover:scale-105 transition-all duration-300">
-            <div className="text-4xl mb-4">💬</div>
-            <MessageCircle className="w-8 h-8 text-secondary mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-4 text-foreground">WhatsApp</h3>
             <p className="text-muted-foreground mb-6">
               Chat with us instantly for quick support
@@ -32,8 +30,6 @@ const ContactSection = () => {
           </div>
 
           <div className="step-card text-center hover:scale-105 transition-all duration-300">
-            <div className="text-4xl mb-4">✉️</div>
-            <Mail className="w-8 h-8 text-accent mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-4 text-foreground">Email</h3>
             <p className="text-muted-foreground mb-6">
               Send us your queries anytime
@@ -47,8 +43,6 @@ const ContactSection = () => {
           </div>
 
           <div className="step-card text-center hover:scale-105 transition-all duration-300">
-            <div className="text-4xl mb-4">📞</div>
-            <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-4 text-foreground">Phone</h3>
             <p className="text-muted-foreground mb-6">
               Call us for immediate assistance

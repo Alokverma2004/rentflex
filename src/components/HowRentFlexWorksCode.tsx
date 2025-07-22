@@ -52,10 +52,10 @@ if (RentFlex.verifiesTenant()) {
         
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Tenant Side - Left */}
-          <div className="bg-muted/30 rounded-2xl p-8 border border-border/50">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-3xl">👨‍🎓</span>
-              <h3 className="text-2xl font-bold text-foreground">Tenant Side</h3>
+          <div className="bg-card rounded-2xl p-8 border border-border/50 shadow-soft">
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-foreground mb-2">For Tenants</h3>
+              <p className="text-muted-foreground">Move in without the deposit burden</p>
             </div>
             
             {/* Tenant Code Block */}
@@ -101,10 +101,10 @@ if (RentFlex.verifiesTenant()) {
           </div>
 
           {/* Owner Side - Right */}
-          <div className="bg-muted/30 rounded-2xl p-8 border border-border/50">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-3xl">🧑‍💼</span>
-              <h3 className="text-2xl font-bold text-foreground">Owner Side</h3>
+          <div className="bg-card rounded-2xl p-8 border border-border/50 shadow-soft">
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-foreground mb-2">For Owners</h3>
+              <p className="text-muted-foreground">Get paid instantly, verified tenants</p>
             </div>
             
             {/* Owner Code Block */}
