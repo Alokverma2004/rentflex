@@ -51,60 +51,60 @@ if (owner.acceptsTenant) {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Code Block - Left Side */}
-          <div className="order-2 lg:order-1">
-            <div className="bg-card rounded-xl shadow-lg border border-border overflow-hidden">
-              {/* Code Header */}
-              <div className="bg-muted px-4 py-3 border-b border-border flex items-center gap-2">
-                <div className="flex gap-1">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
-                <span className="text-sm text-muted-foreground ml-2">rentflex-process.js</span>
-              </div>
-              
-              {/* Code Content */}
-              <div className="p-6 bg-card">
-                <pre className="text-sm font-mono leading-relaxed text-foreground overflow-x-auto">
-                  <code className="block">
-                    <span className="text-green-600">// RentFlex Process</span>{'\n'}
-                    <span className="text-purple-600">if</span> (tenant.requestsHelp) {'{'}
-                    {'\n  '}RentFlex.<span className="text-blue-600">paySecurityDeposit</span>();
-                    {'\n  '}tenant.<span className="text-blue-600">moveIn</span>();
-                    {'\n  '}tenant.<span className="text-blue-600">repayMonthly</span>();
-                    {'\n}{'}
-                    {'\n\n'}
-                    <span className="text-purple-600">if</span> (owner.acceptsTenant) {'{'}
-                    {'\n  '}owner.<span className="text-blue-600">getDepositInstantly</span>();
-                    {'\n}'}
-                  </code>
-                </pre>
-              </div>
-            </div>
-          </div>
-
-          {/* Steps - Right Side */}
-          <div className="order-1 lg:order-2 space-y-6">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Steps - Left Side */}
+          <div className="space-y-8">
             {steps.map((step, index) => (
-              <div key={index} className="step-card flex items-start gap-4 p-6">
-                <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
-                  <step.icon className="w-6 h-6 text-secondary-foreground" />
+              <div key={index} className="flex items-start gap-6">
+                <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <step.icon className="w-8 h-8 text-secondary-foreground" />
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-xl font-semibold text-foreground">{step.title}</h3>
-                    <span className="text-xs bg-muted px-2 py-1 rounded text-muted-foreground font-mono">
+                  <div className="flex items-center gap-3 mb-3">
+                    <h3 className="text-2xl font-bold text-foreground">{step.title}</h3>
+                    <span className="text-xs bg-accent/20 text-accent px-3 py-1 rounded-full font-mono font-semibold">
                       Line {step.lineNumbers}
                     </span>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Code Block - Right Side */}
+          <div className="lg:sticky lg:top-8">
+            <div className="bg-card rounded-2xl shadow-2xl border border-border overflow-hidden">
+              {/* Code Header */}
+              <div className="bg-gradient-to-r from-muted to-muted/80 px-6 py-4 border-b border-border flex items-center gap-3">
+                <div className="flex gap-2">
+                  <div className="w-4 h-4 rounded-full bg-red-500 shadow-sm"></div>
+                  <div className="w-4 h-4 rounded-full bg-yellow-500 shadow-sm"></div>
+                  <div className="w-4 h-4 rounded-full bg-green-500 shadow-sm"></div>
+                </div>
+                <span className="text-sm text-muted-foreground ml-3 font-mono font-medium">rentflex-process.js</span>
+              </div>
+              
+              {/* Code Content */}
+              <div className="p-8 bg-gradient-to-br from-card to-card/95">
+                <pre className="text-base font-mono leading-loose text-foreground overflow-x-auto">
+                  <code className="block">
+                    <span className="text-green-600 font-medium">// RentFlex Process</span>{'\n'}
+                    <span className="text-purple-600 font-semibold">if</span> <span className="text-muted-foreground">(</span>tenant<span className="text-orange-500">.</span>requestsHelp<span className="text-muted-foreground">) {'{'}</span>
+                    {'\n  '}RentFlex<span className="text-orange-500">.</span><span className="text-blue-600 font-medium">paySecurityDeposit</span><span className="text-muted-foreground">();</span>
+                    {'\n  '}tenant<span className="text-orange-500">.</span><span className="text-blue-600 font-medium">moveIn</span><span className="text-muted-foreground">();</span>
+                    {'\n  '}tenant<span className="text-orange-500">.</span><span className="text-blue-600 font-medium">repayMonthly</span><span className="text-muted-foreground">();</span>
+                    {'\n'}<span className="text-muted-foreground">{'}'}</span>
+                    {'\n\n'}
+                    <span className="text-purple-600 font-semibold">if</span> <span className="text-muted-foreground">(</span>owner<span className="text-orange-500">.</span>acceptsTenant<span className="text-muted-foreground">) {'{'}</span>
+                    {'\n  '}owner<span className="text-orange-500">.</span><span className="text-blue-600 font-medium">getDepositInstantly</span><span className="text-muted-foreground">();</span>
+                    {'\n'}<span className="text-muted-foreground">{'}'}</span>
+                  </code>
+                </pre>
+              </div>
+            </div>
           </div>
         </div>
       </div>
