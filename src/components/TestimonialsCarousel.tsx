@@ -7,44 +7,62 @@ const TestimonialsCarousel = () => {
   const testimonials = [
     {
       name: "Priya Sharma",
-      role: "Student, Delhi University",
+      role: "Student, Koramangala",
       text: "RentFlex saved me from borrowing money from family. I moved into my dream PG without any stress about the deposit.",
       rating: 5
     },
     {
       name: "Rajesh Kumar",
-      role: "PG Owner, Bangalore",
+      role: "PG Owner, Whitefield",
       text: "Since partnering with RentFlex, my occupancy rate increased by 40%. Tenants love the deposit-free option!",
       rating: 5
     },
     {
       name: "Anjali Patel",
-      role: "Working Professional, Mumbai",
+      role: "Working Professional, BTM Layout",
       text: "The process was so smooth. Within 2 days, I had my rental sorted without paying a huge deposit upfront.",
       rating: 5
     },
     {
       name: "Vikram Singh",
-      role: "Landlord, Pune",
+      role: "Landlord, Indiranagar",
       text: "RentFlex brings quality tenants and I get my deposit immediately. It's a win-win for everyone involved.",
       rating: 5
     },
     {
       name: "Meera Reddy",
-      role: "Student, Hyderabad",
+      role: "Student, HSR Layout",
       text: "No more waiting for parents to transfer deposit money. RentFlex made my college accommodation hassle-free!",
       rating: 5
     },
     {
       name: "Amit Gupta",
-      role: "Tech Professional, Gurgaon",
+      role: "Tech Professional, Electronic City",
       text: "Moving to a new city for work was stressful enough. RentFlex removed the biggest hurdle - the huge security deposit.",
       rating: 5
     },
     {
       name: "Sunita Joshi",
-      role: "PG Owner, Mumbai",
+      role: "PG Owner, Jayanagar",
       text: "My PG is always full now. Students prefer us because of the RentFlex partnership. Best decision I made!",
+      rating: 5
+    },
+    {
+      name: "Karthik Rao",
+      role: "Student, Malleswaram", 
+      text: "RentFlex made my transition to Bangalore so easy. No more hassle with huge deposits!",
+      rating: 5
+    },
+    {
+      name: "Deepa Nair",
+      role: "Working Professional, Marathahalli",
+      text: "Finally found a solution that works! Moving cities for work is now stress-free with RentFlex.",
+      rating: 5
+    },
+    {
+      name: "Ravi Prasad",
+      role: "Landlord, Hebbal",
+      text: "RentFlex has transformed my rental business. Quality tenants and instant deposits - what more could I ask for!",
       rating: 5
     }
   ];
@@ -52,7 +70,7 @@ const TestimonialsCarousel = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    }, 8000);
     return () => clearInterval(timer);
   }, []);
 

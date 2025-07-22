@@ -6,11 +6,11 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <img 
-                src="/lovable-uploads/0d337119-1dd9-4907-8591-3a4a109d0527.png" 
-                alt="RentFlex Logo" 
-                className="h-8 w-auto"
-              />
+            <img 
+              src="/lovable-uploads/0d337119-1dd9-4907-8591-3a4a109d0527.png" 
+              alt="RentFlex Logo" 
+              className="h-12 w-auto"
+            />
               <h3 className="text-2xl font-bold">RentFlex</h3>
             </div>
             <p className="text-gray-300 text-lg leading-relaxed max-w-md">
