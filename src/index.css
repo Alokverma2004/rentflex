@@ -9,42 +9,32 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+  /* Color Palette */
+  --primary: 0 0% 0%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 54 100% 62%;
+  --secondary-foreground: 0 0% 0%;
+  --accent: 210 100% 56%;
+  --accent-foreground: 0 0% 100%;
+  --background: 0 0% 97%;
+  --foreground: 0 0% 0%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 54 100% 62%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
-
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 51 100% 50%;
-    --secondary-foreground: 0 0% 0%;
-
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-
-    --accent: 51 100% 50%;
-    --accent-foreground: 0 0% 0%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 90%;
-    --input: 0 0% 95%;
-    --ring: 51 100% 50%;
-
-    /* Custom design tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 10%));
-    --gradient-accent: linear-gradient(135deg, hsl(51 100% 50%), hsl(45 100% 60%));
-    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.1);
-    --shadow-yellow: 0 8px 25px hsl(51 100% 50% / 0.2);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-    --radius: 0.5rem;
+  /* Design System */
+  --gradient-hero: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 15%) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(54 100% 62%) 0%, hsl(54 100% 70%) 100%);
+  --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.08);
+  --shadow-yellow: 0 4px 20px -2px hsl(54 100% 62% / 0.25);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius: 12px;
 
     --sidebar-background: 0 0% 98%;
 
@@ -112,33 +102,47 @@ All colors MUST be HSL.
   }
 }
 
-/* Custom component styles */
-@layer components {
-  .hero-button {
-    @apply inline-flex items-center justify-center rounded-full px-8 py-4 text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
-  }
-  
-  .hero-button-primary {
-    @apply hero-button bg-primary text-primary-foreground hover:bg-primary/90;
-  }
-  
-  .hero-button-secondary {
-    @apply hero-button bg-secondary text-secondary-foreground hover:bg-secondary/90 hover:shadow-yellow;
-  }
-  
-  .section-padding {
-    @apply px-6 py-16 lg:py-24;
-  }
-  
-  .container-custom {
-    @apply mx-auto max-w-7xl;
-  }
-  
-  .step-card {
-    @apply bg-card rounded-2xl p-8 shadow-soft hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
-  }
-  
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
-  }
+/* Custom Components */
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-16 lg:py-20;
+}
+
+.nav-link {
+  @apply text-foreground hover:text-secondary transition-colors duration-200 font-medium;
+}
+
+.cta-button {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-yellow hover:scale-105;
+}
+
+.hero-button-primary {
+  @apply bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105;
+}
+
+.hero-button-secondary {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-yellow hover:scale-105;
+}
+
+.step-card {
+  @apply bg-card rounded-2xl p-6 shadow-soft hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+}
+
+.tab-active {
+  @apply bg-primary text-primary-foreground;
+}
+
+.tab-inactive {
+  @apply bg-muted text-muted-foreground hover:bg-muted/80;
+}
+
+.testimonial-card {
+  @apply bg-card rounded-2xl p-6 shadow-soft;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent;
 }

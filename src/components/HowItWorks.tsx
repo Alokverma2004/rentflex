@@ -23,9 +23,9 @@ const HowItWorks = () => {
     <section id="tenant-info" className="section-padding bg-background">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            How It Works
-            <span className="block text-secondary mt-2">For Tenants</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            For Tenants
+            <span className="block text-secondary mt-2">How It Works</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Move into your dream rental in just 3 simple steps
