@@ -23,8 +23,13 @@ const Navigation = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="text-2xl font-bold text-foreground">
-            RentFlex
+          <div className="flex items-center space-x-2">
+            <img 
+              src="/lovable-uploads/0d337119-1dd9-4907-8591-3a4a109d0527.png" 
+              alt="RentFlex Logo" 
+              className="h-8 w-auto"
+            />
+            <span className="text-2xl font-bold text-foreground">RentFlex</span>
           </div>
 
           {/* Desktop Navigation */}
