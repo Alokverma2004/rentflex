@@ -35,12 +35,9 @@ const HowItWorks = () => {
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
           {steps.map((step, index) => (
             <div key={index} className="step-card text-center group">
-              <div className="relative mb-6">
+              <div className="mb-6">
                 <div className="w-20 h-20 mx-auto bg-secondary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300">
                   <step.icon className="w-10 h-10 text-secondary-foreground" />
-                </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                  {index + 1}
                 </div>
               </div>
               <h3 className="text-2xl font-semibold mb-4">{step.title}</h3>

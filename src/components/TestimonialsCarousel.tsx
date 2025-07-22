@@ -7,26 +7,44 @@ const TestimonialsCarousel = () => {
   const testimonials = [
     {
       name: "Priya Sharma",
-      role: "Student, Delhi University",
+      role: "Student, Whitefield, Bangalore",
       text: "RentFlex saved me from borrowing money from family. I moved into my dream PG without any stress about the deposit.",
       rating: 5
     },
     {
       name: "Rajesh Kumar",
-      role: "PG Owner, Bangalore",
+      role: "PG Owner, Koramangala, Bangalore",
       text: "Since partnering with RentFlex, my occupancy rate increased by 40%. Tenants love the deposit-free option!",
       rating: 5
     },
     {
       name: "Anjali Patel",
-      role: "Working Professional, Mumbai",
+      role: "Working Professional, HSR Layout, Bangalore",
       text: "The process was so smooth. Within 2 days, I had my rental sorted without paying a huge deposit upfront.",
       rating: 5
     },
     {
       name: "Vikram Singh",
-      role: "Landlord, Pune",
+      role: "Landlord, Indiranagar, Bangalore",
       text: "RentFlex brings quality tenants and I get my deposit immediately. It's a win-win for everyone involved.",
+      rating: 5
+    },
+    {
+      name: "Sneha Reddy",
+      role: "Software Engineer, Electronic City, Bangalore",
+      text: "Moving to Bangalore was stress-free with RentFlex. No huge upfront costs, just smooth monthly payments.",
+      rating: 5
+    },
+    {
+      name: "Arjun Nair",
+      role: "Student, Jayanagar, Bangalore",
+      text: "As a student, paying large deposits was impossible. RentFlex made my accommodation dreams come true!",
+      rating: 5
+    },
+    {
+      name: "Meera Shah",
+      role: "Property Owner, BTM Layout, Bangalore",
+      text: "RentFlex ensures I get reliable tenants and immediate deposit security. Highly recommend to all landlords!",
       rating: 5
     }
   ];
@@ -34,7 +52,7 @@ const TestimonialsCarousel = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    }, 8000);
     return () => clearInterval(timer);
   }, []);
 
@@ -80,35 +98,6 @@ const TestimonialsCarousel = () => {
             </div>
           </div>
 
-          {/* Navigation */}
-          <div className="flex justify-center items-center mt-8 space-x-4">
-            <button
-              onClick={prevTestimonial}
-              className="p-2 rounded-full bg-card shadow-soft hover:shadow-lg transition-all duration-200"
-            >
-              <ChevronLeft className="w-6 h-6 text-foreground" />
-            </button>
-            
-            {/* Dots */}
-            <div className="flex space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                    index === activeIndex ? 'bg-secondary' : 'bg-muted-foreground/30'
-                  }`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={nextTestimonial}
-              className="p-2 rounded-full bg-card shadow-soft hover:shadow-lg transition-all duration-200"
-            >
-              <ChevronRight className="w-6 h-6 text-foreground" />
-            </button>
-          </div>
         </div>
       </div>
     </section>
