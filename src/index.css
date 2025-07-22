@@ -16,7 +16,7 @@ All colors MUST be HSL.
   --secondary-foreground: 0 0% 100%;
   --accent: 32 95% 44%;
   --accent-foreground: 0 0% 100%;
-  --background: 210 20% 98%;
+  --background: 0 0% 97%;
   --foreground: 0 0% 0%;
   --card: 0 0% 100%;
   --card-foreground: 0 0% 0%;
@@ -108,7 +108,7 @@ All colors MUST be HSL.
 }
 
 .section-padding {
-  @apply py-8 lg:py-12;
+  @apply py-16 lg:py-20;
 }
 
 .nav-link {

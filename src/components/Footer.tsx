@@ -9,7 +9,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/0d337119-1dd9-4907-8591-3a4a109d0527.png" 
                 alt="RentFlex Logo" 
-                className="h-12 w-auto"
+                className="h-8 w-auto"
               />
               <h3 className="text-2xl font-bold">RentFlex</h3>
             </div>
