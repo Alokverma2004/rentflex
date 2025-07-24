@@ -20,7 +20,7 @@ const ContactSection = () => {
               Chat with us instantly for quick support
             </p>
             <a 
-              href="https://wa.me/919876543210" 
+              href="https://wa.me/918887157019" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hero-button-secondary"
@@ -35,7 +35,7 @@ const ContactSection = () => {
               Send us your queries anytime
             </p>
             <a 
-              href="mailto:hello@rentflex.in"
+              href="mailto:alokverma4237@gmail.com"
               className="hero-button-primary"
             >
               Send Email
@@ -48,7 +48,7 @@ const ContactSection = () => {
               Call us for immediate assistance
             </p>
             <a 
-              href="tel:+919876543210"
+              href="tel:+918887157019"
               className="cta-button"
             >
               Call Now
