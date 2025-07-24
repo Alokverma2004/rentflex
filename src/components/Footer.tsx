@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-primary/5 text-foreground section-padding">
+    <footer className="bg-gradient-to-br from-primary/90 to-primary text-primary-foreground section-padding">
       <div className="container-custom">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Logo & Description */}
@@ -13,7 +13,7 @@ const Footer = () => {
               />
               <h3 className="text-2xl font-bold">RentFlex</h3>
             </div>
-            <p className="text-gray-300 text-lg leading-relaxed max-w-md">
+            <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-md">
               Making rentals accessible for everyone. Deposit-free living for the modern generation.
             </p>
           </div>
@@ -22,9 +22,9 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-lg">Quick Links</h4>
             <ul className="space-y-3">
-              <li><a href="#tenant-info" className="text-gray-300 hover:text-secondary transition-colors">For Tenants</a></li>
-              <li><a href="#owner-info" className="text-gray-300 hover:text-secondary transition-colors">For Owners</a></li>
-              <li><a href="mailto:hello@rentflex.in" className="text-gray-300 hover:text-secondary transition-colors">Contact</a></li>
+              <li><a href="#tenant-info" className="text-primary-foreground/80 hover:text-secondary transition-colors">For Tenants</a></li>
+              <li><a href="#owner-info" className="text-primary-foreground/80 hover:text-secondary transition-colors">For Owners</a></li>
+              <li><a href="mailto:alokverma4237@gmail.com" className="text-primary-foreground/80 hover:text-secondary transition-colors">Contact</a></li>
             </ul>
           </div>
           
@@ -32,15 +32,15 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-lg">Legal</h4>
             <ul className="space-y-3">
-              <li><a href="/about" className="text-gray-300 hover:text-secondary transition-colors">About</a></li>
-              <li><a href="/terms" className="text-gray-300 hover:text-secondary transition-colors">Terms</a></li>
-              <li><a href="/privacy" className="text-gray-300 hover:text-secondary transition-colors">Privacy Policy</a></li>
+              <li><a href="/about" className="text-primary-foreground/80 hover:text-secondary transition-colors">About</a></li>
+              <li><a href="/terms" className="text-primary-foreground/80 hover:text-secondary transition-colors">Terms</a></li>
+              <li><a href="/privacy" className="text-primary-foreground/80 hover:text-secondary transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-gray-700 pt-8 text-center">
-          <p className="text-gray-300">
+        <div className="border-t border-primary-foreground/20 pt-8 text-center">
+          <p className="text-primary-foreground/80">
             © 2025 RentFlex. All Rights Reserved.
           </p>
         </div>

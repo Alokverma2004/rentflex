@@ -14,14 +14,14 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-foreground">
-              Move In Without 
+              Move In First. 
               <span className="block gradient-text bg-gradient-accent">
-                Paying the Deposit.
+                Pay the Deposit Later.
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl mb-8 text-muted-foreground leading-relaxed">
-              RentFlex pays your rental deposit so you don't have to.
+              RentFlex covers your security deposit instantly — flexible repayment, zero hassle.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

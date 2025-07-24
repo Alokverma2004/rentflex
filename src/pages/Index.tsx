@@ -1,6 +1,5 @@
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
-import SplitSection from '@/components/SplitSection';
 import HowItWorks from '@/components/HowItWorks';
 import ForOwners from '@/components/ForOwners';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
@@ -14,7 +13,6 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <HeroSection />
-      <SplitSection />
       <HowItWorks />
       <ForOwners />
       <TestimonialsCarousel />
