@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import ApplyDialog from './ApplyDialog';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isApplyDialogOpen, setIsApplyDialogOpen] = useState(false);
+  const location = useLocation();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -13,6 +15,7 @@ const Navigation = () => {
   };
 
   const navItems = [
+    { label: 'Home', path: '/' },
     { label: 'How It Works', id: 'how-it-works' },
     { label: 'For Tenants', id: 'tenant-info' },
     { label: 'For Owners', id: 'owner-info' },
@@ -25,32 +28,51 @@ const Navigation = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <img 
               src="/lovable-uploads/7e196370-6756-436f-88ce-ed3e23764645.png" 
               alt="RentFlex Logo" 
               className="h-10 w-auto"
             />
             <span className="text-2xl font-bold text-foreground">RentFlex</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="nav-link"
-              >
-                {item.label}
-              </button>
+              item.path ? (
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  className="nav-link"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id!)}
+                  className="nav-link"
+                >
+                  {item.label}
+                </button>
+              )
             ))}
-            <button
-              onClick={() => setIsApplyDialogOpen(true)}
-              className="cta-button"
-            >
-              Apply Now
-            </button>
+            {location.pathname === '/' ? (
+              <button
+                onClick={() => setIsApplyDialogOpen(true)}
+                className="cta-button"
+              >
+                Apply Now
+              </button>
+            ) : (
+              <Link
+                to="/application"
+                className="cta-button"
+              >
+                Apply Now
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -68,20 +90,41 @@ const Navigation = () => {
         <div className="md:hidden bg-background border-t border-border">
           <div className="container-custom py-4 space-y-4">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left nav-link py-2"
-              >
-                {item.label}
-              </button>
+              item.path ? (
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block w-full text-left nav-link py-2"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id!)}
+                  className="block w-full text-left nav-link py-2"
+                >
+                  {item.label}
+                </button>
+              )
             ))}
-            <button
-              onClick={() => setIsApplyDialogOpen(true)}
-              className="cta-button w-full mt-4"
-            >
-              Apply Now
-            </button>
+            {location.pathname === '/' ? (
+              <button
+                onClick={() => setIsApplyDialogOpen(true)}
+                className="cta-button w-full mt-4"
+              >
+                Apply Now
+              </button>
+            ) : (
+              <Link
+                to="/application"
+                onClick={() => setIsMenuOpen(false)}
+                className="cta-button w-full mt-4"
+              >
+                Apply Now
+              </Link>
+            )}
           </div>
         </div>
       )}
