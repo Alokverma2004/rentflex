@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import ApplyDialog from './ApplyDialog';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isApplyDialogOpen, setIsApplyDialogOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -44,7 +46,7 @@ const Navigation = () => {
               </button>
             ))}
             <button
-              onClick={() => scrollToSection('tenant-info')}
+              onClick={() => setIsApplyDialogOpen(true)}
               className="cta-button"
             >
               Apply Now
@@ -75,7 +77,7 @@ const Navigation = () => {
               </button>
             ))}
             <button
-              onClick={() => scrollToSection('tenant-info')}
+              onClick={() => setIsApplyDialogOpen(true)}
               className="cta-button w-full mt-4"
             >
               Apply Now
@@ -83,6 +85,11 @@ const Navigation = () => {
           </div>
         </div>
       )}
+      
+      <ApplyDialog 
+        open={isApplyDialogOpen} 
+        onOpenChange={setIsApplyDialogOpen} 
+      />
     </nav>
   );
 };
