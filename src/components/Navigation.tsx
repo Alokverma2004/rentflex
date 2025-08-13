@@ -30,7 +30,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/7e196370-6756-436f-88ce-ed3e23764645.png" 
+              src="/lovable-uploads/005c073c-6516-498e-b95a-87782f270052.png" 
               alt="RentFlex Logo" 
               className="h-10 w-auto"
             />
