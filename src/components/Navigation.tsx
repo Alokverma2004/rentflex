@@ -21,7 +21,6 @@ const Navigation = () => {
     { label: 'For Owners', id: 'owner-info' },
     { label: 'FAQ', id: 'faq' },
     { label: 'Contact', id: 'contact' },
-    { label: 'Apply as Tenant', path: '/tenant-onboarding' },
   ];
 
   return (
@@ -59,21 +58,12 @@ const Navigation = () => {
                 </button>
               )
             ))}
-            {location.pathname === '/' ? (
-              <button
-                onClick={() => setIsApplyDialogOpen(true)}
-                className="cta-button"
-              >
-                Apply Now
-              </button>
-            ) : (
-              <Link
-                to="/tenant-onboarding"
-                className="cta-button"
-              >
-                Apply Now
-              </Link>
-            )}
+            <Link
+              to="/tenant-onboarding"
+              className="cta-button"
+            >
+              Apply Now
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -110,22 +100,13 @@ const Navigation = () => {
                 </button>
               )
             ))}
-            {location.pathname === '/' ? (
-              <button
-                onClick={() => setIsApplyDialogOpen(true)}
-                className="cta-button w-full mt-4"
-              >
-                Apply Now
-              </button>
-            ) : (
-              <Link
-                to="/tenant-onboarding"
-                onClick={() => setIsMenuOpen(false)}
-                className="cta-button w-full mt-4"
-              >
-                Apply Now
-              </Link>
-            )}
+            <Link
+              to="/tenant-onboarding"
+              onClick={() => setIsMenuOpen(false)}
+              className="cta-button w-full mt-4"
+            >
+              Apply Now
+            </Link>
           </div>
         </div>
       )}
