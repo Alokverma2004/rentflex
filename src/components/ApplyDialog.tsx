@@ -27,7 +27,7 @@ const ApplyDialog = ({ open, onOpenChange }: ApplyDialogProps) => {
         <div className="grid gap-4 py-6">
           {/* Apply as Tenant */}
           <Button
-            onClick={() => scrollToSection('tenant-info')}
+            onClick={() => window.location.href = '/tenant-onboarding'}
             variant="outline"
             className="h-auto p-6 flex flex-col items-center gap-3 hover:bg-primary/5 border-2 hover:border-primary/20 transition-all"
           >

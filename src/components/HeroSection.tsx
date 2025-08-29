@@ -26,7 +26,7 @@ const HeroSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button 
-                onClick={() => scrollToSection('tenant-info')}
+                onClick={() => window.location.href = '/tenant-onboarding'}
                 className="hero-button-primary"
               >
                 Apply as Tenant

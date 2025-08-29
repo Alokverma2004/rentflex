@@ -21,6 +21,7 @@ const Navigation = () => {
     { label: 'For Owners', id: 'owner-info' },
     { label: 'FAQ', id: 'faq' },
     { label: 'Contact', id: 'contact' },
+    { label: 'Apply as Tenant', path: '/tenant-onboarding' },
   ];
 
   return (
@@ -67,7 +68,7 @@ const Navigation = () => {
               </button>
             ) : (
               <Link
-                to="/application"
+                to="/tenant-onboarding"
                 className="cta-button"
               >
                 Apply Now
@@ -118,7 +119,7 @@ const Navigation = () => {
               </button>
             ) : (
               <Link
-                to="/application"
+                to="/tenant-onboarding"
                 onClick={() => setIsMenuOpen(false)}
                 className="cta-button w-full mt-4"
               >
